@@ -51,6 +51,6 @@ jobs:
       - name: Snyk authoentication
         run: snyk auth ${{ secrets.SNYK_TOKEN }}
 
-      - name: Run Snyk 
+      - name: Run Snyk for sca 
         run: snyk test --file=composer.lock --package-manager=composer
         working-directory: vulnerabilities/api
