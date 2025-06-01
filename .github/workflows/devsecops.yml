@@ -33,8 +33,11 @@ jobs:
 
   php-sca-snyk:
     runs-on: ubuntu-latest
-
     steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+
       - name: Setting up PHP
         uses: shivammathur/setup-php@v2
         with: 
