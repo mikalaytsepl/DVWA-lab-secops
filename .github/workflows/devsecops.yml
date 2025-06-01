@@ -23,10 +23,8 @@ jobs:
           tools: composer:v3
 
       - name: Install PHP dependencies
-        uses: ramsey/composer-install@3.1.1
-        with:
-          composer-options: "--prefer-dist"
+        run: cd ./vulnerabilities/api/ |
+         composer install
 
       - name: Run Composer audit
-        working-directory: vulnerabilities/api/
         run: composer audit
