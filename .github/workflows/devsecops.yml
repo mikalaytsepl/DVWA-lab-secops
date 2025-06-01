@@ -28,4 +28,5 @@ jobs:
           composer-options: "--prefer-dist"
 
       - name: Run Composer audit
+        working-directory: vulnerabilities/api/
         run: composer audit
