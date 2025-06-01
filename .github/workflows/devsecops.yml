@@ -23,7 +23,7 @@ jobs:
           tools: composer:v3
 
       - name: Install PHP dependencies
-        run: cd ./vulnerabilities/api/ |
+        run: cd ./vulnerabilities/api/ &&
          composer install
 
       - name: Run Composer audit
