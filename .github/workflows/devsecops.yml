@@ -8,21 +8,24 @@ on:
     branches:
       - master
 
-jobs: 
-  sca-npm-audit:
-    runs-on: ubuntu-latest
 
+jobs:
+  php-sca-audit:
+    runs-on: ubuntu-latest
     steps:
-      - name: Get the repo to the runner
+      - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Install JS
-        uses: actions/setup-node@v4
+      - name: Set up PHP
+        uses: actions/setup-php@v2.33.0
         with:
-          node-version: 18
-      
-      - name: Install dependencies
-        run: npm install
+          php-version: 8.3
+          tools: composer:v3
 
-      - name: Run audit
-        run: npm audit --audit-level=high
+      - name: Install PHP dependencies
+        uses: ramsey/composer-install@3.1.1
+        with:
+          composer-options: "--prefer-dist"
+
+      - name: Run Composer audit
+        run: composer audit
