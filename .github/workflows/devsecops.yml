@@ -1,0 +1,28 @@
+name: DevSecOps workflow for the lab
+
+run-name: DevSecOps lab workflow starded by ${{github.actor}}
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+
+jobs: 
+  sca-npm-audit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get the repo to the runner
+        uses: actions/checkout@v4
+
+      - name: Install JS
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run audit
+        run: npm audit --audit-level=high
