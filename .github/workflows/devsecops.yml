@@ -51,9 +51,22 @@ jobs:
       - name: Istall snyk
         run: npm install -g snyk
       
-      - name: Snyk authoentication
+      - name: Snyk auth
         run: snyk auth ${{ secrets.SNYK_TOKEN }}
 
       - name: Run Snyk for sca 
         run: snyk test --file=composer.lock --package-manager=composer
         working-directory: vulnerabilities/api
+
+  php-code-scan-semgrep:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Semgrep
+        run: pip install semgrep
+
+      - name: Run Semgrep PHP scan
+        run: semgrep --config=auto --lang php
