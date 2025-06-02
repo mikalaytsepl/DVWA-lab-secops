@@ -69,4 +69,4 @@ jobs:
         run: pip install semgrep
 
       - name: Run Semgrep PHP scan
-        run: semgrep --config=auto --lang php
+        run: semgrep --config=auto --lang=php
