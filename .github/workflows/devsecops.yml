@@ -61,6 +61,12 @@ jobs:
   php-code-scan-semgrep:
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: read
+    
+    env: 
+      SEMGREP_APP_TOKEN: ${{ secrets.SEMGREP_APP_TOKEN }}
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -69,4 +75,4 @@ jobs:
         run: pip install semgrep
 
       - name: Run Semgrep PHP scan
-        run: semgrep --config=auto
+        run: semgrep --config=auto --upload
