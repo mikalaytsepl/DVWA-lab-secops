@@ -4,16 +4,12 @@ if (isset($_POST['Submit'])) {
     // Get and trim the user input
     $target = trim($_REQUEST['ip']);
 
-    // Validate the input as a proper IP address
+    // Validate the input as a proper IP
     if (filter_var($target, FILTER_VALIDATE_IP)) {
-        // Safely escape the input for use in shell
-        $escaped_target = escapeshellarg($target);
-
-        // Detect OS and build command
         if (stristr(php_uname('s'), 'Windows NT')) {
-            $cmd = shell_exec("ping $escaped_target");
+            $cmd = shell_exec("ping " . escapeshellarg($target));
         } else {
-            $cmd = shell_exec("ping -c 4 $escaped_target");
+            $cmd = shell_exec("ping -c 4 " . escapeshellarg($target));
         }
 
         // Output result
