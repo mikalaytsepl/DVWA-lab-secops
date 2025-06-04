@@ -58,16 +58,11 @@ jobs:
         run: snyk test --file=composer.lock --package-manager=composer
         working-directory: vulnerabilities/api
 
-  php-code-scan-semgrep:
+  semgrep:
+    name: Semgrep SAST Scan
     runs-on: ubuntu-latest
-
-    permissions:
-      contents: read
-
     steps:
-      - name: Run Semgrep with dashboard upload
-        uses: returntocorp/semgrep-action@v1
+      - uses: actions/checkout@v3
+      - uses: returntocorp/semgrep-action@v1
         with:
           config: auto
-        env:
-          SEMGREP_APP_TOKEN: ${{ secrets.SEMGREP_APP_TOKEN }}
