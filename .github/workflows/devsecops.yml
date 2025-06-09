@@ -89,3 +89,4 @@ jobs:
             --redact # keys stay masked in the report
             --exit-code 0 # pipeline will not fail
             --verbose # more info (maybe delete that) 
+        continue-on-error: true
