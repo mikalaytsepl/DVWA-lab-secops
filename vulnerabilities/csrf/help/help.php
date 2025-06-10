@@ -51,7 +51,7 @@ Host: dvwa.test
 Content-Length: 51
 Content-Type: application/json
 Cookie: PHPSESSID=0hr9ikmo07thlcvjv3u3pkfeni; security=high
-user-token: REDACTED
+user-token: <?php echo getenv('USER_TOKEN'); ?>
 
 {"password_new":"a","password_conf":"a","Change":1}</span></pre></code>
 
