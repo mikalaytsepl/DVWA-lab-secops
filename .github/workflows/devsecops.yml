@@ -72,7 +72,7 @@ jobs:
         env:
           SEMGREP_APP_TOKEN: ${{ secrets.SEMGREP_APP_TOKEN }}
 
-  scan:
+  secret-scan:
     name: gitleaks secret scan
     runs-on: ubuntu-latest
     steps:
@@ -90,3 +90,26 @@ jobs:
             --exit-code 0 # pipeline will not fail
             --verbose # more info (maybe delete that) 
         continue-on-error: true
+
+  build-and-test-dvwa:
+    needs: [php-sca-audit, php-sca-snyk, semgrep, secret-scan]
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: start the app with docker compose (compose has biuld in it so no need builbing b4)
+        run: |
+          docker-compose up -d
+          sleep 15
+
+      - name: accessebility check
+        run: curl -I http://127.0.0.1:4280 | grep "200 OK"
+
+      - name: take down after tests
+        if: always()
+        run: docker-compose down
