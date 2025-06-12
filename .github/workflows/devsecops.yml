@@ -29,6 +29,23 @@ jobs:
 
       - name: accessebility check
         run: curl -I http://127.0.0.1:4280/login.php | grep "200 OK"
+      
+      - name: creating tars to save  all the images involved
+        run: |
+          docker save ghcr.io/digininja/dvwa:latest -o dvwa-image.tar
+          docker save mariadb:10 -o mariadb-image.tar
+
+      - name: Upload DVWA image
+        uses: actions/upload-artifact@v4
+        with:
+          name: dvwa-image
+          path: dvwa-image.tar
+
+      - name: Upload mariadb image
+        uses: actions/upload-artifact@v4
+        with:
+          name: mariadb-image
+          path: mariadb-image.tar
 
       - name: take down after tests
         if: always()
