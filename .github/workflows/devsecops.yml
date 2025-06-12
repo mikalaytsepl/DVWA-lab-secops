@@ -104,7 +104,7 @@ jobs:
 
       - name: start the app with docker compose (compose has biuld in it so no need builbing b4)
         run: |
-          docker-compose up -d
+          docker compose up -d
           sleep 15
 
       - name: accessebility check
@@ -112,4 +112,4 @@ jobs:
 
       - name: take down after tests
         if: always()
-        run: docker-compose down
+        run: docker compose down
