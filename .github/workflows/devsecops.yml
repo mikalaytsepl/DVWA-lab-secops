@@ -108,7 +108,7 @@ jobs:
           sleep 15
 
       - name: accessebility check
-        run: curl -I http://127.0.0.1:4280 | grep "200 OK"
+        run: curl -I http://127.0.0.1:4280/login.php | grep "200 OK"
 
       - name: take down after tests
         if: always()
