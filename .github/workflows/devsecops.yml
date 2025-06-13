@@ -131,3 +131,59 @@ jobs:
             --exit-code 0 # pipeline will not fail
             --verbose # more info (maybe delete that) 
         continue-on-error: true
+  
+  owasp-scan:
+    needs: [build-and-test-dvwa]
+    runs-on: ubuntu-latest
+
+    services: 
+      docker: 
+        image: docker:dind
+        ports:
+          - 2375:2375
+        options: 
+          --privileged
+          
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: install docker
+        run: |
+          sudo apt update
+          sudo apt install docker -y docker.io
+          docker version
+
+      - name: get dvwa image from artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: dvwa-image
+  
+      - name: get mariadb miage from artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: mariadb-image
+
+      - name: Load retrived images into docker
+        run: |
+          docker load -i dvwa-image.tar
+          docker load -i mariadb-image.tar
+      
+      - name: Start containers
+        run: |
+          docker compose up -d
+          sleep 15
+
+      - name: perform owasp baseline scan 
+        run: |
+          docker run --rm -v $(pwd):/zap/wrk/:rw \
+            --network host \
+            owasp/zap2docker-stable zap-baseline.py \
+            -t http://127.0.0.1:4280/login.php \
+            -r zap-report.html
+      
+      - name: upload scan results as artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: owasp_report
+          path: zap-report.html
