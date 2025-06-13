@@ -152,7 +152,7 @@ jobs:
         run: |
           curl -fsSL https://get.docker.com -o get-docker.sh
           sudo sh get-docker.sh
-          docker versionn
+          docker version
 
       - name: get dvwa image from artifact
         uses: actions/download-artifact@v4
