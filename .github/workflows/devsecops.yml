@@ -150,9 +150,9 @@ jobs:
 
       - name: install docker
         run: |
-          sudo apt-get update
-          sudo apt-get install docker -y moby-engine moby-cli
-          docker version
+          curl -fsSL https://get.docker.com -o get-docker.sh
+          sudo sh get-docker.sh
+          docker versionn
 
       - name: get dvwa image from artifact
         uses: actions/download-artifact@v4
