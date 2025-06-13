@@ -151,7 +151,7 @@ jobs:
       - name: install docker
         run: |
           sudo apt-get update
-          sudo apt-get install docker -y docker.io
+          sudo apt-get install docker -y moby-engine moby-cli
           docker version
 
       - name: get dvwa image from artifact
