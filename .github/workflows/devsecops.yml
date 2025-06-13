@@ -178,7 +178,7 @@ jobs:
         run: |
           docker run --rm -v $(pwd):/zap/wrk/:rw \
             --network host \
-            owasp/zap2docker-stable zap-baseline.py \
+            zaproxy/zap-stable zap-baseline.py \
             -t http://127.0.0.1:4280/login.php \
             -r zap-report.html
       
