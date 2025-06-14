@@ -1,0 +1,2101 @@
+{
+  "version": 0,
+  "detector": {
+    "name": "trivy",
+    "version": "0.63.0",
+    "url": "https://github.com/aquasecurity/trivy"
+  },
+  "metadata": {
+    "aquasecurity:trivy:RepoDigest": "",
+    "aquasecurity:trivy:RepoTag": "ghcr.io/digininja/dvwa:latest"
+  },
+  "ref": "refs/heads/not_to_trigger_others",
+  "sha": "6c0bce895ed6be0f1c660d4b06eb849b63de28a2",
+  "job": {
+    "correlator": "DevSecOps workflow for the lab_trivy-scan",
+    "id": "15653149152"
+  },
+  "scanned": "2025-06-14T14:49:57Z",
+  "manifests": {
+    "Node.js": {
+      "name": "node-pkg",
+      "file": {
+        "source_location": "ghcr.io/digininja/dvwa:latest"
+      },
+      "resolved": {
+        "swagger-php-docs": {
+          "package_url": "pkg:npm/swagger-php-docs@4.0.0",
+          "relationship": "direct",
+          "scope": "runtime",
+          "metadata": {
+            "source_location": "var/www/html/vulnerabilities/api/vendor/zircote/swagger-php/docs/package.json"
+          }
+        }
+      }
+    },
+    "ghcr.io/digininja/dvwa:latest (debian 12.11)": {
+      "name": "debian",
+      "resolved": {
+        "adduser": {
+          "package_url": "pkg:deb/debian/adduser@3.134?arch=all\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "passwd@1:4.13+dfsg1-1+deb12u1"
+          ],
+          "scope": "runtime"
+        },
+        "apache2": {
+          "package_url": "pkg:deb/debian/apache2@2.4.62-1~deb12u2?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "apache2-bin@2.4.62-1~deb12u2",
+            "apache2-data@2.4.62-1~deb12u2",
+            "apache2-utils@2.4.62-1~deb12u2",
+            "media-types@10.0.0",
+            "procps@2:4.0.2-3"
+          ],
+          "scope": "runtime"
+        },
+        "apache2-bin": {
+          "package_url": "pkg:deb/debian/apache2-bin@2.4.62-1~deb12u2?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libapr1@1.7.2-3+deb12u1",
+            "libaprutil1-dbd-sqlite3@1.6.3-1",
+            "libaprutil1-ldap@1.6.3-1",
+            "libaprutil1@1.6.3-1",
+            "libbrotli1@1.0.9-2+b6",
+            "libc6@2.36-9+deb12u10",
+            "libcrypt1@1:4.4.33-2",
+            "libcurl4@7.88.1-10+deb12u12",
+            "libjansson4@2.14-2",
+            "libldap-2.5-0@2.5.13+dfsg-5",
+            "liblua5.3-0@5.3.6-2",
+            "libnghttp2-14@1.52.0-1+deb12u2",
+            "libpcre2-8-0@10.42-1",
+            "libssl3@3.0.16-1~deb12u1",
+            "libxml2@2.9.14+dfsg-1.3~deb12u1",
+            "zlib1g@1:1.2.13.dfsg-1"
+          ],
+          "scope": "runtime"
+        },
+        "apache2-data": {
+          "package_url": "pkg:deb/debian/apache2-data@2.4.62-1~deb12u2?arch=all\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "scope": "runtime"
+        },
+        "apache2-utils": {
+          "package_url": "pkg:deb/debian/apache2-utils@2.4.62-1~deb12u2?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libapr1@1.7.2-3+deb12u1",
+            "libaprutil1@1.6.3-1",
+            "libc6@2.36-9+deb12u10",
+            "libcrypt1@1:4.4.33-2",
+            "libssl3@3.0.16-1~deb12u1"
+          ],
+          "scope": "runtime"
+        },
+        "apt": {
+          "package_url": "pkg:deb/debian/apt@2.6.1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "adduser@3.134",
+            "debian-archive-keyring@2023.3+deb12u2",
+            "gpgv@2.2.40-1.1",
+            "libapt-pkg6.0@2.6.1",
+            "libc6@2.36-9+deb12u10",
+            "libgcc-s1@12.2.0-14+deb12u1",
+            "libgnutls30@3.7.9-2+deb12u4",
+            "libseccomp2@2.5.4-1+deb12u1",
+            "libstdc++6@12.2.0-14+deb12u1",
+            "libsystemd0@252.38-1~deb12u1"
+          ],
+          "scope": "runtime"
+        },
+        "autoconf": {
+          "package_url": "pkg:deb/debian/autoconf@2.71-3?arch=all\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "debianutils@5.7-0.5~deb12u1",
+            "m4@1.4.19-3",
+            "perl@5.36.0-7+deb12u2"
+          ],
+          "scope": "runtime"
+        },
+        "base-files": {
+          "package_url": "pkg:deb/debian/base-files@12.4%2Bdeb12u11?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "scope": "runtime"
+        },
+        "base-passwd": {
+          "package_url": "pkg:deb/debian/base-passwd@3.6.1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10",
+            "libdebconfclient0@0.270",
+            "libselinux1@3.4-1+b6"
+          ],
+          "scope": "runtime"
+        },
+        "bash": {
+          "package_url": "pkg:deb/debian/bash@5.2.15-2%2Bb8?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "base-files@12.4+deb12u11",
+            "debianutils@5.7-0.5~deb12u1"
+          ],
+          "scope": "runtime"
+        },
+        "binutils": {
+          "package_url": "pkg:deb/debian/binutils@2.40-2?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "binutils-common@2.40-2",
+            "binutils-x86-64-linux-gnu@2.40-2",
+            "libbinutils@2.40-2"
+          ],
+          "scope": "runtime"
+        },
+        "binutils-common": {
+          "package_url": "pkg:deb/debian/binutils-common@2.40-2?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "scope": "runtime"
+        },
+        "binutils-x86-64-linux-gnu": {
+          "package_url": "pkg:deb/debian/binutils-x86-64-linux-gnu@2.40-2?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "binutils-common@2.40-2",
+            "libbinutils@2.40-2",
+            "libc6@2.36-9+deb12u10",
+            "libctf-nobfd0@2.40-2",
+            "libctf0@2.40-2",
+            "libgcc-s1@12.2.0-14+deb12u1",
+            "libgprofng0@2.40-2",
+            "libjansson4@2.14-2",
+            "libstdc++6@12.2.0-14+deb12u1",
+            "libzstd1@1.5.4+dfsg2-5",
+            "zlib1g@1:1.2.13.dfsg-1"
+          ],
+          "scope": "runtime"
+        },
+        "bsdutils": {
+          "package_url": "pkg:deb/debian/bsdutils@2.38.1-5%2Bdeb12u3?arch=amd64\u0026distro=debian-12.11\u0026epoch=1",
+          "relationship": "direct",
+          "scope": "runtime"
+        },
+        "bzip2": {
+          "package_url": "pkg:deb/debian/bzip2@1.0.8-5%2Bb1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libbz2-1.0@1.0.8-5+b1",
+            "libc6@2.36-9+deb12u10"
+          ],
+          "scope": "runtime"
+        },
+        "ca-certificates": {
+          "package_url": "pkg:deb/debian/ca-certificates@20230311?arch=all\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "debconf@1.5.82",
+            "openssl@3.0.16-1~deb12u1"
+          ],
+          "scope": "runtime"
+        },
+        "coreutils": {
+          "package_url": "pkg:deb/debian/coreutils@9.1-1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "scope": "runtime"
+        },
+        "cpp": {
+          "package_url": "pkg:deb/debian/cpp@12.2.0-3?arch=amd64\u0026distro=debian-12.11\u0026epoch=4",
+          "relationship": "direct",
+          "dependencies": [
+            "cpp-12@12.2.0-14+deb12u1"
+          ],
+          "scope": "runtime"
+        },
+        "cpp-12": {
+          "package_url": "pkg:deb/debian/cpp-12@12.2.0-14%2Bdeb12u1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "gcc-12-base@12.2.0-14+deb12u1",
+            "libc6@2.36-9+deb12u10",
+            "libgmp10@2:6.2.1+dfsg1-1.1",
+            "libisl23@0.25-1.1",
+            "libmpc3@1.3.1-1",
+            "libmpfr6@4.2.0-1",
+            "libzstd1@1.5.4+dfsg2-5",
+            "zlib1g@1:1.2.13.dfsg-1"
+          ],
+          "scope": "runtime"
+        },
+        "curl": {
+          "package_url": "pkg:deb/debian/curl@7.88.1-10%2Bdeb12u12?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10",
+            "libcurl4@7.88.1-10+deb12u12",
+            "zlib1g@1:1.2.13.dfsg-1"
+          ],
+          "scope": "runtime"
+        },
+        "dash": {
+          "package_url": "pkg:deb/debian/dash@0.5.12-2?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "debianutils@5.7-0.5~deb12u1",
+            "dpkg@1.21.22"
+          ],
+          "scope": "runtime"
+        },
+        "debconf": {
+          "package_url": "pkg:deb/debian/debconf@1.5.82?arch=all\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "scope": "runtime"
+        },
+        "debian-archive-keyring": {
+          "package_url": "pkg:deb/debian/debian-archive-keyring@2023.3%2Bdeb12u2?arch=all\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "scope": "runtime"
+        },
+        "debianutils": {
+          "package_url": "pkg:deb/debian/debianutils@5.7-0.5~deb12u1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "scope": "runtime"
+        },
+        "diffutils": {
+          "package_url": "pkg:deb/debian/diffutils@3.8-4?arch=amd64\u0026distro=debian-12.11\u0026epoch=1",
+          "relationship": "direct",
+          "scope": "runtime"
+        },
+        "dpkg": {
+          "package_url": "pkg:deb/debian/dpkg@1.21.22?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "tar@1.34+dfsg-1.2+deb12u1"
+          ],
+          "scope": "runtime"
+        },
+        "dpkg-dev": {
+          "package_url": "pkg:deb/debian/dpkg-dev@1.21.22?arch=all\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "binutils@2.40-2",
+            "bzip2@1.0.8-5+b1",
+            "libdpkg-perl@1.21.22",
+            "make@4.3-4.1",
+            "patch@2.7.6-7",
+            "tar@1.34+dfsg-1.2+deb12u1",
+            "xz-utils@5.4.1-1"
+          ],
+          "scope": "runtime"
+        },
+        "e2fsprogs": {
+          "package_url": "pkg:deb/debian/e2fsprogs@1.47.0-2?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "logsave@1.47.0-2"
+          ],
+          "scope": "runtime"
+        },
+        "file": {
+          "package_url": "pkg:deb/debian/file@5.44-3?arch=amd64\u0026distro=debian-12.11\u0026epoch=1",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10",
+            "libmagic1@1:5.44-3"
+          ],
+          "scope": "runtime"
+        },
+        "findutils": {
+          "package_url": "pkg:deb/debian/findutils@4.9.0-4?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "scope": "runtime"
+        },
+        "g++": {
+          "package_url": "pkg:deb/debian/g%2B%2B@12.2.0-3?arch=amd64\u0026distro=debian-12.11\u0026epoch=4",
+          "relationship": "direct",
+          "dependencies": [
+            "cpp@4:12.2.0-3",
+            "g++-12@12.2.0-14+deb12u1",
+            "gcc-12@12.2.0-14+deb12u1",
+            "gcc@4:12.2.0-3"
+          ],
+          "scope": "runtime"
+        },
+        "g++-12": {
+          "package_url": "pkg:deb/debian/g%2B%2B-12@12.2.0-14%2Bdeb12u1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "gcc-12-base@12.2.0-14+deb12u1",
+            "gcc-12@12.2.0-14+deb12u1",
+            "libc6@2.36-9+deb12u10",
+            "libgmp10@2:6.2.1+dfsg1-1.1",
+            "libisl23@0.25-1.1",
+            "libmpc3@1.3.1-1",
+            "libmpfr6@4.2.0-1",
+            "libstdc++-12-dev@12.2.0-14+deb12u1",
+            "libzstd1@1.5.4+dfsg2-5",
+            "zlib1g@1:1.2.13.dfsg-1"
+          ],
+          "scope": "runtime"
+        },
+        "gcc": {
+          "package_url": "pkg:deb/debian/gcc@12.2.0-3?arch=amd64\u0026distro=debian-12.11\u0026epoch=4",
+          "relationship": "direct",
+          "dependencies": [
+            "cpp@4:12.2.0-3",
+            "gcc-12@12.2.0-14+deb12u1"
+          ],
+          "scope": "runtime"
+        },
+        "gcc-12": {
+          "package_url": "pkg:deb/debian/gcc-12@12.2.0-14%2Bdeb12u1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "binutils@2.40-2",
+            "cpp-12@12.2.0-14+deb12u1",
+            "gcc-12-base@12.2.0-14+deb12u1",
+            "libc6@2.36-9+deb12u10",
+            "libcc1-0@12.2.0-14+deb12u1",
+            "libgcc-12-dev@12.2.0-14+deb12u1",
+            "libgcc-s1@12.2.0-14+deb12u1",
+            "libgmp10@2:6.2.1+dfsg1-1.1",
+            "libisl23@0.25-1.1",
+            "libmpc3@1.3.1-1",
+            "libmpfr6@4.2.0-1",
+            "libstdc++6@12.2.0-14+deb12u1",
+            "libzstd1@1.5.4+dfsg2-5",
+            "zlib1g@1:1.2.13.dfsg-1"
+          ],
+          "scope": "runtime"
+        },
+        "gcc-12-base": {
+          "package_url": "pkg:deb/debian/gcc-12-base@12.2.0-14%2Bdeb12u1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "scope": "runtime"
+        },
+        "git": {
+          "package_url": "pkg:deb/debian/git@2.39.5-0%2Bdeb12u2?arch=amd64\u0026distro=debian-12.11\u0026epoch=1",
+          "relationship": "direct",
+          "dependencies": [
+            "git-man@1:2.39.5-0+deb12u2",
+            "libc6@2.36-9+deb12u10",
+            "libcurl3-gnutls@7.88.1-10+deb12u12",
+            "liberror-perl@0.17029-2",
+            "libexpat1@2.5.0-1+deb12u1",
+            "libpcre2-8-0@10.42-1",
+            "perl@5.36.0-7+deb12u2",
+            "zlib1g@1:1.2.13.dfsg-1"
+          ],
+          "scope": "runtime"
+        },
+        "git-man": {
+          "package_url": "pkg:deb/debian/git-man@2.39.5-0%2Bdeb12u2?arch=all\u0026distro=debian-12.11\u0026epoch=1",
+          "relationship": "direct",
+          "scope": "runtime"
+        },
+        "gpgv": {
+          "package_url": "pkg:deb/debian/gpgv@2.2.40-1.1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libbz2-1.0@1.0.8-5+b1",
+            "libc6@2.36-9+deb12u10",
+            "libgcrypt20@1.10.1-3",
+            "libgpg-error0@1.46-1",
+            "zlib1g@1:1.2.13.dfsg-1"
+          ],
+          "scope": "runtime"
+        },
+        "grep": {
+          "package_url": "pkg:deb/debian/grep@3.8-5?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "dpkg@1.21.22"
+          ],
+          "scope": "runtime"
+        },
+        "gzip": {
+          "package_url": "pkg:deb/debian/gzip@1.12-1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "dpkg@1.21.22"
+          ],
+          "scope": "runtime"
+        },
+        "hostname": {
+          "package_url": "pkg:deb/debian/hostname@3.23%2Bnmu1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "scope": "runtime"
+        },
+        "init-system-helpers": {
+          "package_url": "pkg:deb/debian/init-system-helpers@1.65.2?arch=all\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "usr-is-merged@37~deb12u1"
+          ],
+          "scope": "runtime"
+        },
+        "iputils-ping": {
+          "package_url": "pkg:deb/debian/iputils-ping@20221126-1%2Bdeb12u1?arch=amd64\u0026distro=debian-12.11\u0026epoch=3",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10",
+            "libcap2-bin@1:2.66-4+deb12u1",
+            "libcap2@1:2.66-4+deb12u1",
+            "libidn2-0@2.3.3-1+b1"
+          ],
+          "scope": "runtime"
+        },
+        "less": {
+          "package_url": "pkg:deb/debian/less@590-2.1~deb12u2?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10",
+            "libtinfo6@6.4-4"
+          ],
+          "scope": "runtime"
+        },
+        "libacl1": {
+          "package_url": "pkg:deb/debian/libacl1@2.3.1-3?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10"
+          ],
+          "scope": "runtime"
+        },
+        "libapr1": {
+          "package_url": "pkg:deb/debian/libapr1@1.7.2-3%2Bdeb12u1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10",
+            "libuuid1@2.38.1-5+deb12u3"
+          ],
+          "scope": "runtime"
+        },
+        "libaprutil1": {
+          "package_url": "pkg:deb/debian/libaprutil1@1.6.3-1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libapr1@1.7.2-3+deb12u1",
+            "libc6@2.36-9+deb12u10",
+            "libcrypt1@1:4.4.33-2",
+            "libdb5.3@5.3.28+dfsg2-1",
+            "libexpat1@2.5.0-1+deb12u1",
+            "libgdbm6@1.23-3",
+            "libssl3@3.0.16-1~deb12u1"
+          ],
+          "scope": "runtime"
+        },
+        "libaprutil1-dbd-sqlite3": {
+          "package_url": "pkg:deb/debian/libaprutil1-dbd-sqlite3@1.6.3-1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libaprutil1@1.6.3-1",
+            "libc6@2.36-9+deb12u10",
+            "libsqlite3-0@3.40.1-2+deb12u1"
+          ],
+          "scope": "runtime"
+        },
+        "libaprutil1-ldap": {
+          "package_url": "pkg:deb/debian/libaprutil1-ldap@1.6.3-1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libaprutil1@1.6.3-1",
+            "libc6@2.36-9+deb12u10",
+            "libldap-2.5-0@2.5.13+dfsg-5"
+          ],
+          "scope": "runtime"
+        },
+        "libapt-pkg6.0": {
+          "package_url": "pkg:deb/debian/libapt-pkg6.0@2.6.1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libbz2-1.0@1.0.8-5+b1",
+            "libc6@2.36-9+deb12u10",
+            "libgcc-s1@12.2.0-14+deb12u1",
+            "libgcrypt20@1.10.1-3",
+            "liblz4-1@1.9.4-1",
+            "liblzma5@5.4.1-1",
+            "libstdc++6@12.2.0-14+deb12u1",
+            "libsystemd0@252.38-1~deb12u1",
+            "libudev1@252.38-1~deb12u1",
+            "libxxhash0@0.8.1-1",
+            "libzstd1@1.5.4+dfsg2-5",
+            "zlib1g@1:1.2.13.dfsg-1"
+          ],
+          "scope": "runtime"
+        },
+        "libargon2-1": {
+          "package_url": "pkg:deb/debian/libargon2-1@0~20171227-0.3%2Bdeb12u1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10"
+          ],
+          "scope": "runtime"
+        },
+        "libasan8": {
+          "package_url": "pkg:deb/debian/libasan8@12.2.0-14%2Bdeb12u1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "gcc-12-base@12.2.0-14+deb12u1",
+            "libc6@2.36-9+deb12u10",
+            "libgcc-s1@12.2.0-14+deb12u1"
+          ],
+          "scope": "runtime"
+        },
+        "libatomic1": {
+          "package_url": "pkg:deb/debian/libatomic1@12.2.0-14%2Bdeb12u1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "gcc-12-base@12.2.0-14+deb12u1",
+            "libc6@2.36-9+deb12u10"
+          ],
+          "scope": "runtime"
+        },
+        "libattr1": {
+          "package_url": "pkg:deb/debian/libattr1@2.5.1-4?arch=amd64\u0026distro=debian-12.11\u0026epoch=1",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10"
+          ],
+          "scope": "runtime"
+        },
+        "libaudit-common": {
+          "package_url": "pkg:deb/debian/libaudit-common@3.0.9-1?arch=all\u0026distro=debian-12.11\u0026epoch=1",
+          "relationship": "direct",
+          "scope": "runtime"
+        },
+        "libaudit1": {
+          "package_url": "pkg:deb/debian/libaudit1@3.0.9-1?arch=amd64\u0026distro=debian-12.11\u0026epoch=1",
+          "relationship": "direct",
+          "dependencies": [
+            "libaudit-common@1:3.0.9-1",
+            "libc6@2.36-9+deb12u10",
+            "libcap-ng0@0.8.3-1+b3"
+          ],
+          "scope": "runtime"
+        },
+        "libbinutils": {
+          "package_url": "pkg:deb/debian/libbinutils@2.40-2?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "binutils-common@2.40-2",
+            "libc6@2.36-9+deb12u10",
+            "libzstd1@1.5.4+dfsg2-5",
+            "zlib1g@1:1.2.13.dfsg-1"
+          ],
+          "scope": "runtime"
+        },
+        "libblkid1": {
+          "package_url": "pkg:deb/debian/libblkid1@2.38.1-5%2Bdeb12u3?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10"
+          ],
+          "scope": "runtime"
+        },
+        "libbrotli-dev": {
+          "package_url": "pkg:deb/debian/libbrotli-dev@1.0.9-2%2Bb6?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libbrotli1@1.0.9-2+b6"
+          ],
+          "scope": "runtime"
+        },
+        "libbrotli1": {
+          "package_url": "pkg:deb/debian/libbrotli1@1.0.9-2%2Bb6?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10"
+          ],
+          "scope": "runtime"
+        },
+        "libbsd0": {
+          "package_url": "pkg:deb/debian/libbsd0@0.11.7-2?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10",
+            "libmd0@1.0.4-2"
+          ],
+          "scope": "runtime"
+        },
+        "libbz2-1.0": {
+          "package_url": "pkg:deb/debian/libbz2-1.0@1.0.8-5%2Bb1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10"
+          ],
+          "scope": "runtime"
+        },
+        "libc-bin": {
+          "package_url": "pkg:deb/debian/libc-bin@2.36-9%2Bdeb12u10?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10"
+          ],
+          "scope": "runtime"
+        },
+        "libc-dev-bin": {
+          "package_url": "pkg:deb/debian/libc-dev-bin@2.36-9%2Bdeb12u10?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10"
+          ],
+          "scope": "runtime"
+        },
+        "libc6": {
+          "package_url": "pkg:deb/debian/libc6@2.36-9%2Bdeb12u10?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libgcc-s1@12.2.0-14+deb12u1"
+          ],
+          "scope": "runtime"
+        },
+        "libc6-dev": {
+          "package_url": "pkg:deb/debian/libc6-dev@2.36-9%2Bdeb12u10?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc-dev-bin@2.36-9+deb12u10",
+            "libc6@2.36-9+deb12u10",
+            "libcrypt-dev@1:4.4.33-2",
+            "libnsl-dev@1.3.0-2",
+            "linux-libc-dev@6.1.140-1",
+            "rpcsvc-proto@1.4.3-1"
+          ],
+          "scope": "runtime"
+        },
+        "libcap-ng0": {
+          "package_url": "pkg:deb/debian/libcap-ng0@0.8.3-1%2Bb3?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10"
+          ],
+          "scope": "runtime"
+        },
+        "libcap2": {
+          "package_url": "pkg:deb/debian/libcap2@2.66-4%2Bdeb12u1?arch=amd64\u0026distro=debian-12.11\u0026epoch=1",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10"
+          ],
+          "scope": "runtime"
+        },
+        "libcap2-bin": {
+          "package_url": "pkg:deb/debian/libcap2-bin@2.66-4%2Bdeb12u1?arch=amd64\u0026distro=debian-12.11\u0026epoch=1",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10",
+            "libcap2@1:2.66-4+deb12u1"
+          ],
+          "scope": "runtime"
+        },
+        "libcbor0.8": {
+          "package_url": "pkg:deb/debian/libcbor0.8@0.8.0-2%2Bb1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10"
+          ],
+          "scope": "runtime"
+        },
+        "libcc1-0": {
+          "package_url": "pkg:deb/debian/libcc1-0@12.2.0-14%2Bdeb12u1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "gcc-12-base@12.2.0-14+deb12u1",
+            "libc6@2.36-9+deb12u10",
+            "libgcc-s1@12.2.0-14+deb12u1",
+            "libstdc++6@12.2.0-14+deb12u1"
+          ],
+          "scope": "runtime"
+        },
+        "libcom-err2": {
+          "package_url": "pkg:deb/debian/libcom-err2@1.47.0-2?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10"
+          ],
+          "scope": "runtime"
+        },
+        "libcrypt-dev": {
+          "package_url": "pkg:deb/debian/libcrypt-dev@4.4.33-2?arch=amd64\u0026distro=debian-12.11\u0026epoch=1",
+          "relationship": "direct",
+          "dependencies": [
+            "libcrypt1@1:4.4.33-2"
+          ],
+          "scope": "runtime"
+        },
+        "libcrypt1": {
+          "package_url": "pkg:deb/debian/libcrypt1@4.4.33-2?arch=amd64\u0026distro=debian-12.11\u0026epoch=1",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10"
+          ],
+          "scope": "runtime"
+        },
+        "libctf-nobfd0": {
+          "package_url": "pkg:deb/debian/libctf-nobfd0@2.40-2?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10",
+            "zlib1g@1:1.2.13.dfsg-1"
+          ],
+          "scope": "runtime"
+        },
+        "libctf0": {
+          "package_url": "pkg:deb/debian/libctf0@2.40-2?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libbinutils@2.40-2",
+            "libc6@2.36-9+deb12u10",
+            "zlib1g@1:1.2.13.dfsg-1"
+          ],
+          "scope": "runtime"
+        },
+        "libcurl3-gnutls": {
+          "package_url": "pkg:deb/debian/libcurl3-gnutls@7.88.1-10%2Bdeb12u12?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libbrotli1@1.0.9-2+b6",
+            "libc6@2.36-9+deb12u10",
+            "libgnutls30@3.7.9-2+deb12u4",
+            "libgssapi-krb5-2@1.20.1-2+deb12u3",
+            "libidn2-0@2.3.3-1+b1",
+            "libldap-2.5-0@2.5.13+dfsg-5",
+            "libnettle8@3.8.1-2",
+            "libnghttp2-14@1.52.0-1+deb12u2",
+            "libpsl5@0.21.2-1",
+            "librtmp1@2.4+20151223.gitfa8646d.1-2+b2",
+            "libssh2-1@1.10.0-3+b1",
+            "libzstd1@1.5.4+dfsg2-5",
+            "zlib1g@1:1.2.13.dfsg-1"
+          ],
+          "scope": "runtime"
+        },
+        "libcurl4": {
+          "package_url": "pkg:deb/debian/libcurl4@7.88.1-10%2Bdeb12u12?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libbrotli1@1.0.9-2+b6",
+            "libc6@2.36-9+deb12u10",
+            "libgssapi-krb5-2@1.20.1-2+deb12u3",
+            "libidn2-0@2.3.3-1+b1",
+            "libldap-2.5-0@2.5.13+dfsg-5",
+            "libnghttp2-14@1.52.0-1+deb12u2",
+            "libpsl5@0.21.2-1",
+            "librtmp1@2.4+20151223.gitfa8646d.1-2+b2",
+            "libssh2-1@1.10.0-3+b1",
+            "libssl3@3.0.16-1~deb12u1",
+            "libzstd1@1.5.4+dfsg2-5",
+            "zlib1g@1:1.2.13.dfsg-1"
+          ],
+          "scope": "runtime"
+        },
+        "libdb5.3": {
+          "package_url": "pkg:deb/debian/libdb5.3@5.3.28%2Bdfsg2-1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10"
+          ],
+          "scope": "runtime"
+        },
+        "libdebconfclient0": {
+          "package_url": "pkg:deb/debian/libdebconfclient0@0.270?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10"
+          ],
+          "scope": "runtime"
+        },
+        "libdpkg-perl": {
+          "package_url": "pkg:deb/debian/libdpkg-perl@1.21.22?arch=all\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "dpkg@1.21.22"
+          ],
+          "scope": "runtime"
+        },
+        "libedit2": {
+          "package_url": "pkg:deb/debian/libedit2@3.1-20221030-2?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libbsd0@0.11.7-2",
+            "libc6@2.36-9+deb12u10",
+            "libtinfo6@6.4-4"
+          ],
+          "scope": "runtime"
+        },
+        "liberror-perl": {
+          "package_url": "pkg:deb/debian/liberror-perl@0.17029-2?arch=all\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "scope": "runtime"
+        },
+        "libexpat1": {
+          "package_url": "pkg:deb/debian/libexpat1@2.5.0-1%2Bdeb12u1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10"
+          ],
+          "scope": "runtime"
+        },
+        "libext2fs2": {
+          "package_url": "pkg:deb/debian/libext2fs2@1.47.0-2?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10"
+          ],
+          "scope": "runtime"
+        },
+        "libffi8": {
+          "package_url": "pkg:deb/debian/libffi8@3.4.4-1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10"
+          ],
+          "scope": "runtime"
+        },
+        "libfido2-1": {
+          "package_url": "pkg:deb/debian/libfido2-1@1.12.0-2%2Bb1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10",
+            "libcbor0.8@0.8.0-2+b1",
+            "libssl3@3.0.16-1~deb12u1",
+            "libudev1@252.38-1~deb12u1",
+            "zlib1g@1:1.2.13.dfsg-1"
+          ],
+          "scope": "runtime"
+        },
+        "libfreetype-dev": {
+          "package_url": "pkg:deb/debian/libfreetype-dev@2.12.1%2Bdfsg-5%2Bdeb12u4?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libbrotli-dev@1.0.9-2+b6",
+            "libc6-dev@2.36-9+deb12u10",
+            "libfreetype6@2.12.1+dfsg-5+deb12u4",
+            "libpng-dev@1.6.39-2",
+            "zlib1g-dev@1:1.2.13.dfsg-1"
+          ],
+          "scope": "runtime"
+        },
+        "libfreetype6": {
+          "package_url": "pkg:deb/debian/libfreetype6@2.12.1%2Bdfsg-5%2Bdeb12u4?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libbrotli1@1.0.9-2+b6",
+            "libc6@2.36-9+deb12u10",
+            "libpng16-16@1.6.39-2",
+            "zlib1g@1:1.2.13.dfsg-1"
+          ],
+          "scope": "runtime"
+        },
+        "libfreetype6-dev": {
+          "package_url": "pkg:deb/debian/libfreetype6-dev@2.12.1%2Bdfsg-5%2Bdeb12u4?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libfreetype-dev@2.12.1+dfsg-5+deb12u4"
+          ],
+          "scope": "runtime"
+        },
+        "libgcc-12-dev": {
+          "package_url": "pkg:deb/debian/libgcc-12-dev@12.2.0-14%2Bdeb12u1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "gcc-12-base@12.2.0-14+deb12u1",
+            "libasan8@12.2.0-14+deb12u1",
+            "libatomic1@12.2.0-14+deb12u1",
+            "libgcc-s1@12.2.0-14+deb12u1",
+            "libgomp1@12.2.0-14+deb12u1",
+            "libitm1@12.2.0-14+deb12u1",
+            "liblsan0@12.2.0-14+deb12u1",
+            "libquadmath0@12.2.0-14+deb12u1",
+            "libtsan2@12.2.0-14+deb12u1",
+            "libubsan1@12.2.0-14+deb12u1"
+          ],
+          "scope": "runtime"
+        },
+        "libgcc-s1": {
+          "package_url": "pkg:deb/debian/libgcc-s1@12.2.0-14%2Bdeb12u1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "gcc-12-base@12.2.0-14+deb12u1",
+            "libc6@2.36-9+deb12u10"
+          ],
+          "scope": "runtime"
+        },
+        "libgcrypt20": {
+          "package_url": "pkg:deb/debian/libgcrypt20@1.10.1-3?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10",
+            "libgpg-error0@1.46-1"
+          ],
+          "scope": "runtime"
+        },
+        "libgdbm-compat4": {
+          "package_url": "pkg:deb/debian/libgdbm-compat4@1.23-3?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10",
+            "libgdbm6@1.23-3"
+          ],
+          "scope": "runtime"
+        },
+        "libgdbm6": {
+          "package_url": "pkg:deb/debian/libgdbm6@1.23-3?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10"
+          ],
+          "scope": "runtime"
+        },
+        "libgmp10": {
+          "package_url": "pkg:deb/debian/libgmp10@6.2.1%2Bdfsg1-1.1?arch=amd64\u0026distro=debian-12.11\u0026epoch=2",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10"
+          ],
+          "scope": "runtime"
+        },
+        "libgnutls30": {
+          "package_url": "pkg:deb/debian/libgnutls30@3.7.9-2%2Bdeb12u4?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10",
+            "libgmp10@2:6.2.1+dfsg1-1.1",
+            "libhogweed6@3.8.1-2",
+            "libidn2-0@2.3.3-1+b1",
+            "libnettle8@3.8.1-2",
+            "libp11-kit0@0.24.1-2",
+            "libtasn1-6@4.19.0-2+deb12u1",
+            "libunistring2@1.0-2"
+          ],
+          "scope": "runtime"
+        },
+        "libgomp1": {
+          "package_url": "pkg:deb/debian/libgomp1@12.2.0-14%2Bdeb12u1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "gcc-12-base@12.2.0-14+deb12u1",
+            "libc6@2.36-9+deb12u10"
+          ],
+          "scope": "runtime"
+        },
+        "libgpg-error0": {
+          "package_url": "pkg:deb/debian/libgpg-error0@1.46-1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10"
+          ],
+          "scope": "runtime"
+        },
+        "libgprofng0": {
+          "package_url": "pkg:deb/debian/libgprofng0@2.40-2?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libbinutils@2.40-2",
+            "libc6@2.36-9+deb12u10",
+            "libgcc-s1@12.2.0-14+deb12u1",
+            "libstdc++6@12.2.0-14+deb12u1",
+            "zlib1g@1:1.2.13.dfsg-1"
+          ],
+          "scope": "runtime"
+        },
+        "libgssapi-krb5-2": {
+          "package_url": "pkg:deb/debian/libgssapi-krb5-2@1.20.1-2%2Bdeb12u3?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10",
+            "libcom-err2@1.47.0-2",
+            "libk5crypto3@1.20.1-2+deb12u3",
+            "libkrb5-3@1.20.1-2+deb12u3",
+            "libkrb5support0@1.20.1-2+deb12u3"
+          ],
+          "scope": "runtime"
+        },
+        "libhogweed6": {
+          "package_url": "pkg:deb/debian/libhogweed6@3.8.1-2?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10",
+            "libgmp10@2:6.2.1+dfsg1-1.1",
+            "libnettle8@3.8.1-2"
+          ],
+          "scope": "runtime"
+        },
+        "libicu72": {
+          "package_url": "pkg:deb/debian/libicu72@72.1-3?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10",
+            "libgcc-s1@12.2.0-14+deb12u1",
+            "libstdc++6@12.2.0-14+deb12u1"
+          ],
+          "scope": "runtime"
+        },
+        "libidn2-0": {
+          "package_url": "pkg:deb/debian/libidn2-0@2.3.3-1%2Bb1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10",
+            "libunistring2@1.0-2"
+          ],
+          "scope": "runtime"
+        },
+        "libisl23": {
+          "package_url": "pkg:deb/debian/libisl23@0.25-1.1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10",
+            "libgmp10@2:6.2.1+dfsg1-1.1"
+          ],
+          "scope": "runtime"
+        },
+        "libitm1": {
+          "package_url": "pkg:deb/debian/libitm1@12.2.0-14%2Bdeb12u1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "gcc-12-base@12.2.0-14+deb12u1",
+            "libc6@2.36-9+deb12u10"
+          ],
+          "scope": "runtime"
+        },
+        "libjansson4": {
+          "package_url": "pkg:deb/debian/libjansson4@2.14-2?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10"
+          ],
+          "scope": "runtime"
+        },
+        "libjpeg-dev": {
+          "package_url": "pkg:deb/debian/libjpeg-dev@2.1.5-2?arch=amd64\u0026distro=debian-12.11\u0026epoch=1",
+          "relationship": "direct",
+          "dependencies": [
+            "libjpeg62-turbo-dev@1:2.1.5-2"
+          ],
+          "scope": "runtime"
+        },
+        "libjpeg62-turbo": {
+          "package_url": "pkg:deb/debian/libjpeg62-turbo@2.1.5-2?arch=amd64\u0026distro=debian-12.11\u0026epoch=1",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10"
+          ],
+          "scope": "runtime"
+        },
+        "libjpeg62-turbo-dev": {
+          "package_url": "pkg:deb/debian/libjpeg62-turbo-dev@2.1.5-2?arch=amd64\u0026distro=debian-12.11\u0026epoch=1",
+          "relationship": "direct",
+          "dependencies": [
+            "libjpeg62-turbo@1:2.1.5-2"
+          ],
+          "scope": "runtime"
+        },
+        "libk5crypto3": {
+          "package_url": "pkg:deb/debian/libk5crypto3@1.20.1-2%2Bdeb12u3?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10",
+            "libkrb5support0@1.20.1-2+deb12u3"
+          ],
+          "scope": "runtime"
+        },
+        "libkeyutils1": {
+          "package_url": "pkg:deb/debian/libkeyutils1@1.6.3-2?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10"
+          ],
+          "scope": "runtime"
+        },
+        "libkrb5-3": {
+          "package_url": "pkg:deb/debian/libkrb5-3@1.20.1-2%2Bdeb12u3?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10",
+            "libcom-err2@1.47.0-2",
+            "libk5crypto3@1.20.1-2+deb12u3",
+            "libkeyutils1@1.6.3-2",
+            "libkrb5support0@1.20.1-2+deb12u3",
+            "libssl3@3.0.16-1~deb12u1"
+          ],
+          "scope": "runtime"
+        },
+        "libkrb5support0": {
+          "package_url": "pkg:deb/debian/libkrb5support0@1.20.1-2%2Bdeb12u3?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10"
+          ],
+          "scope": "runtime"
+        },
+        "libldap-2.5-0": {
+          "package_url": "pkg:deb/debian/libldap-2.5-0@2.5.13%2Bdfsg-5?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10",
+            "libgnutls30@3.7.9-2+deb12u4",
+            "libsasl2-2@2.1.28+dfsg-10"
+          ],
+          "scope": "runtime"
+        },
+        "liblsan0": {
+          "package_url": "pkg:deb/debian/liblsan0@12.2.0-14%2Bdeb12u1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "gcc-12-base@12.2.0-14+deb12u1",
+            "libc6@2.36-9+deb12u10",
+            "libgcc-s1@12.2.0-14+deb12u1"
+          ],
+          "scope": "runtime"
+        },
+        "liblua5.3-0": {
+          "package_url": "pkg:deb/debian/liblua5.3-0@5.3.6-2?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10",
+            "libstdc++6@12.2.0-14+deb12u1"
+          ],
+          "scope": "runtime"
+        },
+        "liblz4-1": {
+          "package_url": "pkg:deb/debian/liblz4-1@1.9.4-1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10"
+          ],
+          "scope": "runtime"
+        },
+        "liblzma5": {
+          "package_url": "pkg:deb/debian/liblzma5@5.4.1-1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10"
+          ],
+          "scope": "runtime"
+        },
+        "libmagic-mgc": {
+          "package_url": "pkg:deb/debian/libmagic-mgc@5.44-3?arch=amd64\u0026distro=debian-12.11\u0026epoch=1",
+          "relationship": "direct",
+          "scope": "runtime"
+        },
+        "libmagic1": {
+          "package_url": "pkg:deb/debian/libmagic1@5.44-3?arch=amd64\u0026distro=debian-12.11\u0026epoch=1",
+          "relationship": "direct",
+          "dependencies": [
+            "libbz2-1.0@1.0.8-5+b1",
+            "libc6@2.36-9+deb12u10",
+            "liblzma5@5.4.1-1",
+            "libmagic-mgc@1:5.44-3",
+            "zlib1g@1:1.2.13.dfsg-1"
+          ],
+          "scope": "runtime"
+        },
+        "libmd0": {
+          "package_url": "pkg:deb/debian/libmd0@1.0.4-2?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10"
+          ],
+          "scope": "runtime"
+        },
+        "libmount1": {
+          "package_url": "pkg:deb/debian/libmount1@2.38.1-5%2Bdeb12u3?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libblkid1@2.38.1-5+deb12u3",
+            "libc6@2.36-9+deb12u10",
+            "libselinux1@3.4-1+b6"
+          ],
+          "scope": "runtime"
+        },
+        "libmpc3": {
+          "package_url": "pkg:deb/debian/libmpc3@1.3.1-1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10",
+            "libgmp10@2:6.2.1+dfsg1-1.1",
+            "libmpfr6@4.2.0-1"
+          ],
+          "scope": "runtime"
+        },
+        "libmpfr6": {
+          "package_url": "pkg:deb/debian/libmpfr6@4.2.0-1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10",
+            "libgmp10@2:6.2.1+dfsg1-1.1"
+          ],
+          "scope": "runtime"
+        },
+        "libncursesw6": {
+          "package_url": "pkg:deb/debian/libncursesw6@6.4-4?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10",
+            "libtinfo6@6.4-4"
+          ],
+          "scope": "runtime"
+        },
+        "libnettle8": {
+          "package_url": "pkg:deb/debian/libnettle8@3.8.1-2?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10"
+          ],
+          "scope": "runtime"
+        },
+        "libnghttp2-14": {
+          "package_url": "pkg:deb/debian/libnghttp2-14@1.52.0-1%2Bdeb12u2?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10"
+          ],
+          "scope": "runtime"
+        },
+        "libnsl-dev": {
+          "package_url": "pkg:deb/debian/libnsl-dev@1.3.0-2?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libnsl2@1.3.0-2",
+            "libtirpc-dev@1.3.3+ds-1"
+          ],
+          "scope": "runtime"
+        },
+        "libnsl2": {
+          "package_url": "pkg:deb/debian/libnsl2@1.3.0-2?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10",
+            "libtirpc3@1.3.3+ds-1"
+          ],
+          "scope": "runtime"
+        },
+        "libonig5": {
+          "package_url": "pkg:deb/debian/libonig5@6.9.8-1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10"
+          ],
+          "scope": "runtime"
+        },
+        "libp11-kit0": {
+          "package_url": "pkg:deb/debian/libp11-kit0@0.24.1-2?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10",
+            "libffi8@3.4.4-1"
+          ],
+          "scope": "runtime"
+        },
+        "libpam-cap": {
+          "package_url": "pkg:deb/debian/libpam-cap@2.66-4%2Bdeb12u1?arch=amd64\u0026distro=debian-12.11\u0026epoch=1",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10",
+            "libcap2@1:2.66-4+deb12u1",
+            "libpam-runtime@1.5.2-6+deb12u1",
+            "libpam0g@1.5.2-6+deb12u1"
+          ],
+          "scope": "runtime"
+        },
+        "libpam-modules": {
+          "package_url": "pkg:deb/debian/libpam-modules@1.5.2-6%2Bdeb12u1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "scope": "runtime"
+        },
+        "libpam-modules-bin": {
+          "package_url": "pkg:deb/debian/libpam-modules-bin@1.5.2-6%2Bdeb12u1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libaudit1@1:3.0.9-1",
+            "libc6@2.36-9+deb12u10",
+            "libcrypt1@1:4.4.33-2",
+            "libpam0g@1.5.2-6+deb12u1",
+            "libselinux1@3.4-1+b6"
+          ],
+          "scope": "runtime"
+        },
+        "libpam-runtime": {
+          "package_url": "pkg:deb/debian/libpam-runtime@1.5.2-6%2Bdeb12u1?arch=all\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "debconf@1.5.82",
+            "libpam-modules@1.5.2-6+deb12u1"
+          ],
+          "scope": "runtime"
+        },
+        "libpam0g": {
+          "package_url": "pkg:deb/debian/libpam0g@1.5.2-6%2Bdeb12u1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "debconf@1.5.82",
+            "libaudit1@1:3.0.9-1",
+            "libc6@2.36-9+deb12u10"
+          ],
+          "scope": "runtime"
+        },
+        "libpcre2-8-0": {
+          "package_url": "pkg:deb/debian/libpcre2-8-0@10.42-1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10"
+          ],
+          "scope": "runtime"
+        },
+        "libperl5.36": {
+          "package_url": "pkg:deb/debian/libperl5.36@5.36.0-7%2Bdeb12u2?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libbz2-1.0@1.0.8-5+b1",
+            "libc6@2.36-9+deb12u10",
+            "libcrypt1@1:4.4.33-2",
+            "libdb5.3@5.3.28+dfsg2-1",
+            "libgdbm-compat4@1.23-3",
+            "libgdbm6@1.23-3",
+            "perl-modules-5.36@5.36.0-7+deb12u2",
+            "zlib1g@1:1.2.13.dfsg-1"
+          ],
+          "scope": "runtime"
+        },
+        "libpkgconf3": {
+          "package_url": "pkg:deb/debian/libpkgconf3@1.8.1-1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10"
+          ],
+          "scope": "runtime"
+        },
+        "libpng-dev": {
+          "package_url": "pkg:deb/debian/libpng-dev@1.6.39-2?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libpng16-16@1.6.39-2",
+            "zlib1g-dev@1:1.2.13.dfsg-1"
+          ],
+          "scope": "runtime"
+        },
+        "libpng-tools": {
+          "package_url": "pkg:deb/debian/libpng-tools@1.6.39-2?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10",
+            "libpng16-16@1.6.39-2",
+            "zlib1g@1:1.2.13.dfsg-1"
+          ],
+          "scope": "runtime"
+        },
+        "libpng16-16": {
+          "package_url": "pkg:deb/debian/libpng16-16@1.6.39-2?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10",
+            "zlib1g@1:1.2.13.dfsg-1"
+          ],
+          "scope": "runtime"
+        },
+        "libproc2-0": {
+          "package_url": "pkg:deb/debian/libproc2-0@4.0.2-3?arch=amd64\u0026distro=debian-12.11\u0026epoch=2",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10",
+            "libsystemd0@252.38-1~deb12u1"
+          ],
+          "scope": "runtime"
+        },
+        "libpsl5": {
+          "package_url": "pkg:deb/debian/libpsl5@0.21.2-1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10",
+            "libidn2-0@2.3.3-1+b1",
+            "libunistring2@1.0-2"
+          ],
+          "scope": "runtime"
+        },
+        "libquadmath0": {
+          "package_url": "pkg:deb/debian/libquadmath0@12.2.0-14%2Bdeb12u1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "gcc-12-base@12.2.0-14+deb12u1",
+            "libc6@2.36-9+deb12u10"
+          ],
+          "scope": "runtime"
+        },
+        "libreadline8": {
+          "package_url": "pkg:deb/debian/libreadline8@8.2-1.3?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10",
+            "libtinfo6@6.4-4",
+            "readline-common@8.2-1.3"
+          ],
+          "scope": "runtime"
+        },
+        "librtmp1": {
+          "package_url": "pkg:deb/debian/librtmp1@2.4%2B20151223.gitfa8646d.1-2%2Bb2?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10",
+            "libgmp10@2:6.2.1+dfsg1-1.1",
+            "libgnutls30@3.7.9-2+deb12u4",
+            "libhogweed6@3.8.1-2",
+            "libnettle8@3.8.1-2",
+            "zlib1g@1:1.2.13.dfsg-1"
+          ],
+          "scope": "runtime"
+        },
+        "libsasl2-2": {
+          "package_url": "pkg:deb/debian/libsasl2-2@2.1.28%2Bdfsg-10?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10",
+            "libsasl2-modules-db@2.1.28+dfsg-10"
+          ],
+          "scope": "runtime"
+        },
+        "libsasl2-modules-db": {
+          "package_url": "pkg:deb/debian/libsasl2-modules-db@2.1.28%2Bdfsg-10?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10",
+            "libdb5.3@5.3.28+dfsg2-1"
+          ],
+          "scope": "runtime"
+        },
+        "libseccomp2": {
+          "package_url": "pkg:deb/debian/libseccomp2@2.5.4-1%2Bdeb12u1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10"
+          ],
+          "scope": "runtime"
+        },
+        "libselinux1": {
+          "package_url": "pkg:deb/debian/libselinux1@3.4-1%2Bb6?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10",
+            "libpcre2-8-0@10.42-1"
+          ],
+          "scope": "runtime"
+        },
+        "libsemanage-common": {
+          "package_url": "pkg:deb/debian/libsemanage-common@3.4-1?arch=all\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "scope": "runtime"
+        },
+        "libsemanage2": {
+          "package_url": "pkg:deb/debian/libsemanage2@3.4-1%2Bb5?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libaudit1@1:3.0.9-1",
+            "libbz2-1.0@1.0.8-5+b1",
+            "libc6@2.36-9+deb12u10",
+            "libselinux1@3.4-1+b6",
+            "libsemanage-common@3.4-1",
+            "libsepol2@3.4-2.1"
+          ],
+          "scope": "runtime"
+        },
+        "libsepol2": {
+          "package_url": "pkg:deb/debian/libsepol2@3.4-2.1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10"
+          ],
+          "scope": "runtime"
+        },
+        "libsmartcols1": {
+          "package_url": "pkg:deb/debian/libsmartcols1@2.38.1-5%2Bdeb12u3?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10"
+          ],
+          "scope": "runtime"
+        },
+        "libsodium23": {
+          "package_url": "pkg:deb/debian/libsodium23@1.0.18-1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10"
+          ],
+          "scope": "runtime"
+        },
+        "libsqlite3-0": {
+          "package_url": "pkg:deb/debian/libsqlite3-0@3.40.1-2%2Bdeb12u1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10"
+          ],
+          "scope": "runtime"
+        },
+        "libss2": {
+          "package_url": "pkg:deb/debian/libss2@1.47.0-2?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10",
+            "libcom-err2@1.47.0-2"
+          ],
+          "scope": "runtime"
+        },
+        "libssh2-1": {
+          "package_url": "pkg:deb/debian/libssh2-1@1.10.0-3%2Bb1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10",
+            "libssl3@3.0.16-1~deb12u1",
+            "zlib1g@1:1.2.13.dfsg-1"
+          ],
+          "scope": "runtime"
+        },
+        "libssl3": {
+          "package_url": "pkg:deb/debian/libssl3@3.0.16-1~deb12u1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10"
+          ],
+          "scope": "runtime"
+        },
+        "libstdc++-12-dev": {
+          "package_url": "pkg:deb/debian/libstdc%2B%2B-12-dev@12.2.0-14%2Bdeb12u1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "gcc-12-base@12.2.0-14+deb12u1",
+            "libc6-dev@2.36-9+deb12u10",
+            "libgcc-12-dev@12.2.0-14+deb12u1",
+            "libstdc++6@12.2.0-14+deb12u1"
+          ],
+          "scope": "runtime"
+        },
+        "libstdc++6": {
+          "package_url": "pkg:deb/debian/libstdc%2B%2B6@12.2.0-14%2Bdeb12u1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "gcc-12-base@12.2.0-14+deb12u1",
+            "libc6@2.36-9+deb12u10",
+            "libgcc-s1@12.2.0-14+deb12u1"
+          ],
+          "scope": "runtime"
+        },
+        "libsystemd0": {
+          "package_url": "pkg:deb/debian/libsystemd0@252.38-1~deb12u1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10",
+            "libcap2@1:2.66-4+deb12u1",
+            "libgcrypt20@1.10.1-3",
+            "liblz4-1@1.9.4-1",
+            "liblzma5@5.4.1-1",
+            "libzstd1@1.5.4+dfsg2-5"
+          ],
+          "scope": "runtime"
+        },
+        "libtasn1-6": {
+          "package_url": "pkg:deb/debian/libtasn1-6@4.19.0-2%2Bdeb12u1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10"
+          ],
+          "scope": "runtime"
+        },
+        "libtinfo6": {
+          "package_url": "pkg:deb/debian/libtinfo6@6.4-4?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10"
+          ],
+          "scope": "runtime"
+        },
+        "libtirpc-common": {
+          "package_url": "pkg:deb/debian/libtirpc-common@1.3.3%2Bds-1?arch=all\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "scope": "runtime"
+        },
+        "libtirpc-dev": {
+          "package_url": "pkg:deb/debian/libtirpc-dev@1.3.3%2Bds-1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libtirpc3@1.3.3+ds-1"
+          ],
+          "scope": "runtime"
+        },
+        "libtirpc3": {
+          "package_url": "pkg:deb/debian/libtirpc3@1.3.3%2Bds-1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10",
+            "libgssapi-krb5-2@1.20.1-2+deb12u3",
+            "libtirpc-common@1.3.3+ds-1"
+          ],
+          "scope": "runtime"
+        },
+        "libtsan2": {
+          "package_url": "pkg:deb/debian/libtsan2@12.2.0-14%2Bdeb12u1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "gcc-12-base@12.2.0-14+deb12u1",
+            "libc6@2.36-9+deb12u10",
+            "libgcc-s1@12.2.0-14+deb12u1"
+          ],
+          "scope": "runtime"
+        },
+        "libubsan1": {
+          "package_url": "pkg:deb/debian/libubsan1@12.2.0-14%2Bdeb12u1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "gcc-12-base@12.2.0-14+deb12u1",
+            "libc6@2.36-9+deb12u10",
+            "libgcc-s1@12.2.0-14+deb12u1",
+            "libstdc++6@12.2.0-14+deb12u1"
+          ],
+          "scope": "runtime"
+        },
+        "libudev1": {
+          "package_url": "pkg:deb/debian/libudev1@252.38-1~deb12u1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10"
+          ],
+          "scope": "runtime"
+        },
+        "libunistring2": {
+          "package_url": "pkg:deb/debian/libunistring2@1.0-2?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10"
+          ],
+          "scope": "runtime"
+        },
+        "libuuid1": {
+          "package_url": "pkg:deb/debian/libuuid1@2.38.1-5%2Bdeb12u3?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10"
+          ],
+          "scope": "runtime"
+        },
+        "libx11-6": {
+          "package_url": "pkg:deb/debian/libx11-6@1.8.4-2%2Bdeb12u2?arch=amd64\u0026distro=debian-12.11\u0026epoch=2",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10",
+            "libx11-data@2:1.8.4-2+deb12u2",
+            "libxcb1@1.15-1"
+          ],
+          "scope": "runtime"
+        },
+        "libx11-data": {
+          "package_url": "pkg:deb/debian/libx11-data@1.8.4-2%2Bdeb12u2?arch=all\u0026distro=debian-12.11\u0026epoch=2",
+          "relationship": "direct",
+          "scope": "runtime"
+        },
+        "libxau6": {
+          "package_url": "pkg:deb/debian/libxau6@1.0.9-1?arch=amd64\u0026distro=debian-12.11\u0026epoch=1",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10"
+          ],
+          "scope": "runtime"
+        },
+        "libxcb1": {
+          "package_url": "pkg:deb/debian/libxcb1@1.15-1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10",
+            "libxau6@1:1.0.9-1",
+            "libxdmcp6@1:1.1.2-3"
+          ],
+          "scope": "runtime"
+        },
+        "libxdmcp6": {
+          "package_url": "pkg:deb/debian/libxdmcp6@1.1.2-3?arch=amd64\u0026distro=debian-12.11\u0026epoch=1",
+          "relationship": "direct",
+          "dependencies": [
+            "libbsd0@0.11.7-2",
+            "libc6@2.36-9+deb12u10"
+          ],
+          "scope": "runtime"
+        },
+        "libxext6": {
+          "package_url": "pkg:deb/debian/libxext6@1.3.4-1%2Bb1?arch=amd64\u0026distro=debian-12.11\u0026epoch=2",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10",
+            "libx11-6@2:1.8.4-2+deb12u2"
+          ],
+          "scope": "runtime"
+        },
+        "libxml2": {
+          "package_url": "pkg:deb/debian/libxml2@2.9.14%2Bdfsg-1.3~deb12u1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10",
+            "libicu72@72.1-3",
+            "liblzma5@5.4.1-1",
+            "zlib1g@1:1.2.13.dfsg-1"
+          ],
+          "scope": "runtime"
+        },
+        "libxmuu1": {
+          "package_url": "pkg:deb/debian/libxmuu1@1.1.3-3?arch=amd64\u0026distro=debian-12.11\u0026epoch=2",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10",
+            "libx11-6@2:1.8.4-2+deb12u2"
+          ],
+          "scope": "runtime"
+        },
+        "libxxhash0": {
+          "package_url": "pkg:deb/debian/libxxhash0@0.8.1-1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10"
+          ],
+          "scope": "runtime"
+        },
+        "libzstd1": {
+          "package_url": "pkg:deb/debian/libzstd1@1.5.4%2Bdfsg2-5?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10"
+          ],
+          "scope": "runtime"
+        },
+        "linux-libc-dev": {
+          "package_url": "pkg:deb/debian/linux-libc-dev@6.1.140-1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "scope": "runtime"
+        },
+        "login": {
+          "package_url": "pkg:deb/debian/login@4.13%2Bdfsg1-1%2Bdeb12u1?arch=amd64\u0026distro=debian-12.11\u0026epoch=1",
+          "relationship": "direct",
+          "scope": "runtime"
+        },
+        "logsave": {
+          "package_url": "pkg:deb/debian/logsave@1.47.0-2?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10"
+          ],
+          "scope": "runtime"
+        },
+        "m4": {
+          "package_url": "pkg:deb/debian/m4@1.4.19-3?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10"
+          ],
+          "scope": "runtime"
+        },
+        "make": {
+          "package_url": "pkg:deb/debian/make@4.3-4.1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10"
+          ],
+          "scope": "runtime"
+        },
+        "mawk": {
+          "package_url": "pkg:deb/debian/mawk@1.3.4.20200120-3.1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10"
+          ],
+          "scope": "runtime"
+        },
+        "media-types": {
+          "package_url": "pkg:deb/debian/media-types@10.0.0?arch=all\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "scope": "runtime"
+        },
+        "mount": {
+          "package_url": "pkg:deb/debian/mount@2.38.1-5%2Bdeb12u3?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "scope": "runtime"
+        },
+        "ncurses-base": {
+          "package_url": "pkg:deb/debian/ncurses-base@6.4-4?arch=all\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "scope": "runtime"
+        },
+        "ncurses-bin": {
+          "package_url": "pkg:deb/debian/ncurses-bin@6.4-4?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "scope": "runtime"
+        },
+        "openssh-client": {
+          "package_url": "pkg:deb/debian/openssh-client@9.2p1-2%2Bdeb12u6?arch=amd64\u0026distro=debian-12.11\u0026epoch=1",
+          "relationship": "direct",
+          "dependencies": [
+            "adduser@3.134",
+            "libc6@2.36-9+deb12u10",
+            "libedit2@3.1-20221030-2",
+            "libfido2-1@1.12.0-2+b1",
+            "libgssapi-krb5-2@1.20.1-2+deb12u3",
+            "libselinux1@3.4-1+b6",
+            "libssl3@3.0.16-1~deb12u1",
+            "passwd@1:4.13+dfsg1-1+deb12u1",
+            "zlib1g@1:1.2.13.dfsg-1"
+          ],
+          "scope": "runtime"
+        },
+        "openssl": {
+          "package_url": "pkg:deb/debian/openssl@3.0.16-1~deb12u1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10",
+            "libssl3@3.0.16-1~deb12u1"
+          ],
+          "scope": "runtime"
+        },
+        "passwd": {
+          "package_url": "pkg:deb/debian/passwd@4.13%2Bdfsg1-1%2Bdeb12u1?arch=amd64\u0026distro=debian-12.11\u0026epoch=1",
+          "relationship": "direct",
+          "dependencies": [
+            "libaudit1@1:3.0.9-1",
+            "libc6@2.36-9+deb12u10",
+            "libcrypt1@1:4.4.33-2",
+            "libpam-modules@1.5.2-6+deb12u1",
+            "libpam0g@1.5.2-6+deb12u1",
+            "libselinux1@3.4-1+b6",
+            "libsemanage2@3.4-1+b5"
+          ],
+          "scope": "runtime"
+        },
+        "patch": {
+          "package_url": "pkg:deb/debian/patch@2.7.6-7?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10"
+          ],
+          "scope": "runtime"
+        },
+        "perl": {
+          "package_url": "pkg:deb/debian/perl@5.36.0-7%2Bdeb12u2?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libperl5.36@5.36.0-7+deb12u2",
+            "perl-base@5.36.0-7+deb12u2",
+            "perl-modules-5.36@5.36.0-7+deb12u2"
+          ],
+          "scope": "runtime"
+        },
+        "perl-base": {
+          "package_url": "pkg:deb/debian/perl-base@5.36.0-7%2Bdeb12u2?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "scope": "runtime"
+        },
+        "perl-modules-5.36": {
+          "package_url": "pkg:deb/debian/perl-modules-5.36@5.36.0-7%2Bdeb12u2?arch=all\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "perl-base@5.36.0-7+deb12u2"
+          ],
+          "scope": "runtime"
+        },
+        "pkg-config": {
+          "package_url": "pkg:deb/debian/pkg-config@1.8.1-1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "pkgconf@1.8.1-1"
+          ],
+          "scope": "runtime"
+        },
+        "pkgconf": {
+          "package_url": "pkg:deb/debian/pkgconf@1.8.1-1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "pkgconf-bin@1.8.1-1"
+          ],
+          "scope": "runtime"
+        },
+        "pkgconf-bin": {
+          "package_url": "pkg:deb/debian/pkgconf-bin@1.8.1-1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10",
+            "libpkgconf3@1.8.1-1"
+          ],
+          "scope": "runtime"
+        },
+        "procps": {
+          "package_url": "pkg:deb/debian/procps@4.0.2-3?arch=amd64\u0026distro=debian-12.11\u0026epoch=2",
+          "relationship": "direct",
+          "dependencies": [
+            "init-system-helpers@1.65.2",
+            "libc6@2.36-9+deb12u10",
+            "libncursesw6@6.4-4",
+            "libproc2-0@2:4.0.2-3",
+            "libtinfo6@6.4-4"
+          ],
+          "scope": "runtime"
+        },
+        "re2c": {
+          "package_url": "pkg:deb/debian/re2c@3.0-2?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10",
+            "libgcc-s1@12.2.0-14+deb12u1",
+            "libstdc++6@12.2.0-14+deb12u1"
+          ],
+          "scope": "runtime"
+        },
+        "readline-common": {
+          "package_url": "pkg:deb/debian/readline-common@8.2-1.3?arch=all\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "dpkg@1.21.22"
+          ],
+          "scope": "runtime"
+        },
+        "rpcsvc-proto": {
+          "package_url": "pkg:deb/debian/rpcsvc-proto@1.4.3-1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10"
+          ],
+          "scope": "runtime"
+        },
+        "sed": {
+          "package_url": "pkg:deb/debian/sed@4.9-1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "scope": "runtime"
+        },
+        "sysvinit-utils": {
+          "package_url": "pkg:deb/debian/sysvinit-utils@3.06-4?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10"
+          ],
+          "scope": "runtime"
+        },
+        "tar": {
+          "package_url": "pkg:deb/debian/tar@1.34%2Bdfsg-1.2%2Bdeb12u1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "scope": "runtime"
+        },
+        "tzdata": {
+          "package_url": "pkg:deb/debian/tzdata@2025b-0%2Bdeb12u1?arch=all\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "debconf@1.5.82"
+          ],
+          "scope": "runtime"
+        },
+        "usr-is-merged": {
+          "package_url": "pkg:deb/debian/usr-is-merged@37~deb12u1?arch=all\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "scope": "runtime"
+        },
+        "util-linux": {
+          "package_url": "pkg:deb/debian/util-linux@2.38.1-5%2Bdeb12u3?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "util-linux-extra@2.38.1-5+deb12u3"
+          ],
+          "scope": "runtime"
+        },
+        "util-linux-extra": {
+          "package_url": "pkg:deb/debian/util-linux-extra@2.38.1-5%2Bdeb12u3?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libaudit1@1:3.0.9-1",
+            "libc6@2.36-9+deb12u10",
+            "libsmartcols1@2.38.1-5+deb12u3"
+          ],
+          "scope": "runtime"
+        },
+        "xauth": {
+          "package_url": "pkg:deb/debian/xauth@1.1.2-1?arch=amd64\u0026distro=debian-12.11\u0026epoch=1",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10",
+            "libx11-6@2:1.8.4-2+deb12u2",
+            "libxau6@1:1.0.9-1",
+            "libxext6@2:1.3.4-1+b1",
+            "libxmuu1@2:1.1.3-3"
+          ],
+          "scope": "runtime"
+        },
+        "xz-utils": {
+          "package_url": "pkg:deb/debian/xz-utils@5.4.1-1?arch=amd64\u0026distro=debian-12.11",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10",
+            "liblzma5@5.4.1-1"
+          ],
+          "scope": "runtime"
+        },
+        "zlib1g": {
+          "package_url": "pkg:deb/debian/zlib1g@1.2.13.dfsg-1?arch=amd64\u0026distro=debian-12.11\u0026epoch=1",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6@2.36-9+deb12u10"
+          ],
+          "scope": "runtime"
+        },
+        "zlib1g-dev": {
+          "package_url": "pkg:deb/debian/zlib1g-dev@1.2.13.dfsg-1?arch=amd64\u0026distro=debian-12.11\u0026epoch=1",
+          "relationship": "direct",
+          "dependencies": [
+            "libc6-dev@2.36-9+deb12u10",
+            "zlib1g@1:1.2.13.dfsg-1"
+          ],
+          "scope": "runtime"
+        }
+      }
+    },
+    "var/www/html/vulnerabilities/api/vendor/composer/installed.json": {
+      "name": "composer-vendor",
+      "file": {
+        "source_location": "ghcr.io/digininja/dvwa:latest"
+      },
+      "resolved": {
+        "psr/log": {
+          "package_url": "pkg:composer/psr/log@3.0.2",
+          "relationship": "direct",
+          "scope": "runtime"
+        },
+        "symfony/deprecation-contracts": {
+          "package_url": "pkg:composer/symfony/deprecation-contracts@v3.5.1",
+          "relationship": "direct",
+          "scope": "runtime"
+        },
+        "symfony/finder": {
+          "package_url": "pkg:composer/symfony/finder@v7.2.2",
+          "relationship": "direct",
+          "scope": "runtime"
+        },
+        "symfony/polyfill-ctype": {
+          "package_url": "pkg:composer/symfony/polyfill-ctype@v1.31.0",
+          "relationship": "direct",
+          "scope": "runtime"
+        },
+        "symfony/yaml": {
+          "package_url": "pkg:composer/symfony/yaml@v7.2.3",
+          "relationship": "direct",
+          "dependencies": [
+            "symfony/deprecation-contracts@v3.5.1",
+            "symfony/polyfill-ctype@v1.31.0"
+          ],
+          "scope": "runtime"
+        },
+        "zircote/swagger-php": {
+          "package_url": "pkg:composer/zircote/swagger-php@4.11.1",
+          "relationship": "direct",
+          "dependencies": [
+            "psr/log@3.0.2",
+            "symfony/deprecation-contracts@v3.5.1",
+            "symfony/finder@v7.2.2",
+            "symfony/yaml@v7.2.3"
+          ],
+          "scope": "runtime"
+        }
+      }
+    }
+  }
+}
