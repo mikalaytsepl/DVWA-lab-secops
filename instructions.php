@@ -6,8 +6,14 @@ require_once DVWA_WEB_PAGE_TO_ROOT . 'dvwa/includes/Parsedown.php';
 
 dvwaPageStartup( array( ) );
 
+
 header("X-Frame-Options: DENY");
 header("Content-Security-Policy: frame-ancestors 'none';");
+header("X-Content-Type-Options: nosniff");
+
+
+ini_set('display_errors', 0);
+error_reporting(0);
 
 $page = dvwaPageNewGrab();
 $page[ 'title' ]   = 'Instructions' . $page[ 'title_separator' ].$page[ 'title' ];

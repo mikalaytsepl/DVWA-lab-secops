@@ -3,6 +3,15 @@
 define( 'DVWA_WEB_PAGE_TO_ROOT', '' );
 require_once DVWA_WEB_PAGE_TO_ROOT . 'dvwa/includes/dvwaPage.inc.php';
 
+// 🔐 Nagłówki bezpieczeństwa
+header("X-Frame-Options: DENY");
+header("Content-Security-Policy: frame-ancestors 'none';");
+header("X-Content-Type-Options: nosniff");
+
+// 🔐 Wyłączenie błędów PHP
+ini_set('display_errors', 0);
+error_reporting(0);
+
 dvwaPageStartup( array( ) );
 
 $page = dvwaPageNewGrab();

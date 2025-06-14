@@ -3,8 +3,16 @@
 define( 'DVWA_WEB_PAGE_TO_ROOT', '' );
 require_once DVWA_WEB_PAGE_TO_ROOT . 'dvwa/includes/dvwaPage.inc.php';
 
-dvwaPageStartup( array( ) );
 
+header("X-Frame-Options: DENY");
+header("Content-Security-Policy: frame-ancestors 'none';");
+header("X-Content-Type-Options: nosniff");
+
+
+ini_set('display_errors', 0);
+error_reporting(0);
+
+dvwaPageStartup( array( ) );
 dvwaDatabaseConnect();
 
 if( isset( $_POST[ 'Login' ] ) ) {
@@ -19,11 +27,11 @@ if( isset( $_POST[ 'Login' ] ) ) {
 
 	$user = $_POST[ 'username' ];
 	$user = stripslashes( $user );
-	$user = ((isset($GLOBALS["___mysqli_ston"]) && is_object($GLOBALS["___mysqli_ston"])) ? mysqli_real_escape_string($GLOBALS["___mysqli_ston"],  $user ) : ((trigger_error("[MySQLConverterToo] Fix the mysql_escape_string() call! This code does not work.", E_USER_ERROR)) ? "" : ""));
+	$user = ((isset($GLOBALS["___mysqli_ston"]) && is_object($GLOBALS["___mysqli_ston"])) ? mysqli_real_escape_string($GLOBALS["___mysqli_ston"],  $user ) : "");
 
 	$pass = $_POST[ 'password' ];
 	$pass = stripslashes( $pass );
-	$pass = ((isset($GLOBALS["___mysqli_ston"]) && is_object($GLOBALS["___mysqli_ston"])) ? mysqli_real_escape_string($GLOBALS["___mysqli_ston"],  $pass ) : ((trigger_error("[MySQLConverterToo] Fix the mysql_escape_string() call! This code does not work.", E_USER_ERROR)) ? "" : ""));
+	$pass = ((isset($GLOBALS["___mysqli_ston"]) && is_object($GLOBALS["___mysqli_ston"])) ? mysqli_real_escape_string($GLOBALS["___mysqli_ston"],  $pass ) : "");
 	$pass = md5( $pass );
 
 	$query = ("SELECT table_schema, table_name, create_time
@@ -37,14 +45,13 @@ if( isset( $_POST[ 'Login' ] ) ) {
 	}
 
 	$query  = "SELECT * FROM `users` WHERE user='$user' AND password='$pass';";
-	$result = @mysqli_query($GLOBALS["___mysqli_ston"],  $query ) or die( '<pre>' . ((is_object($GLOBALS["___mysqli_ston"])) ? mysqli_error($GLOBALS["___mysqli_ston"]) : (($___mysqli_res = mysqli_connect_error()) ? $___mysqli_res : false)) . '.<br />Try <a href="setup.php">installing again</a>.</pre>' );
-	if( $result && mysqli_num_rows( $result ) === 1 ) {    // Login Successful...
+	$result = @mysqli_query($GLOBALS["___mysqli_ston"],  $query );
+	if( $result && mysqli_num_rows( $result ) === 1 ) {
 		dvwaMessagePush( "You have logged in as '{$user}'" );
 		dvwaLogin( $user );
 		dvwaRedirect( DVWA_WEB_PAGE_TO_ROOT . 'index.php' );
 	}
 
-	// Login failed
 	dvwaMessagePush( 'Login failed' );
 	dvwaRedirect( 'login.php' );
 }
@@ -52,10 +59,9 @@ if( isset( $_POST[ 'Login' ] ) ) {
 $messagesHtml = messagesPopAllToHtml();
 
 Header( 'Cache-Control: no-cache, must-revalidate');    // HTTP/1.1
-Header( 'Content-Type: text/html;charset=utf-8' );      // TODO- proper XHTML headers...
-Header( 'Expires: Tue, 23 Jun 2009 12:00:00 GMT' );     // Date in the past
+Header( 'Content-Type: text/html;charset=utf-8' );
+Header( 'Expires: Tue, 23 Jun 2009 12:00:00 GMT' );
 
-// Anti-CSRF
 generateSessionToken();
 
 echo "<!DOCTYPE html>
