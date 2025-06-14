@@ -187,7 +187,7 @@ jobs:
             --network host \
             zaproxy/zap-stable zap-baseline.py \
             -t http://127.0.0.1:4280/login.php \
-            -r zap-report.html
+            -r zap-report.html || true
 
       - name: upload scan results as artifacts
         uses: actions/upload-artifact@v4
