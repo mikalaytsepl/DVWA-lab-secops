@@ -194,3 +194,40 @@ jobs:
         with:
           name: owasp_report
           path: zap-out/zap-report.html
+
+  trivy-scan:
+    needs: [build-and-test-dvwa]
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Download DVWA image artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: dvwa-image
+
+      - name: Load image into Docker
+        run: docker load -i dvwa-image.tar
+
+      - name: Install Trivy
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y wget apt-transport-https gnupg lsb-release
+          wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | sudo apt-key add -
+          echo deb https://aquasecurity.github.io/trivy-repo/deb $(lsb_release -sc) main | sudo tee -a /etc/apt/sources.list.d/trivy.list
+          sudo apt-get update
+          sudo apt-get install -y trivy
+
+      - name: Run Trivy scan on image
+        run: trivy image --severity HIGH,CRITICAL ghcr.io/digininja/dvwa:latest
+
+      - name: Save Trivy scan results to file
+        run: trivy image --severity HIGH,CRITICAL --format html --output trivy-report.html ghcr.io/digininja/dvwa:latest
+
+      - name: Upload Trivy scan results
+        uses: actions/upload-artifact@v4
+        with:
+          name: trivy_report
+          path: trivy-report.html
