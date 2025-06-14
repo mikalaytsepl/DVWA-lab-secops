@@ -176,10 +176,8 @@ jobs:
 
       - name: Perform OWASP baseline scan
         run: |
-          mkdir -p zap-out
           docker run --rm \
             -v $(pwd)/zap-out:/zap/wrk/:rw \
-            --user 0 \
             --network host \
             zaproxy/zap-stable zap-baseline.py \
             -t http://127.0.0.1:4280/login.php \
