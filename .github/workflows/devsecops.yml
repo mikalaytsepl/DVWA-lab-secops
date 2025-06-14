@@ -200,18 +200,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      - name: checkout
         uses: actions/checkout@v4
 
-      - name: Download DVWA image artifact
+      - name: download image artifact
         uses: actions/download-artifact@v4
         with:
           name: dvwa-image
 
-      - name: Load image into Docker
+      - name: load image
         run: docker load -i dvwa-image.tar
 
-      - name: Install Trivy
+      - name: install trivity
         run: |
           sudo apt-get update
           sudo apt-get install -y wget apt-transport-https gnupg lsb-release
@@ -220,13 +220,13 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y trivy
 
-      - name: Run Trivy scan on image
+      - name: scan with trivity
         run: trivy image --severity HIGH,CRITICAL ghcr.io/digininja/dvwa:latest
 
-      - name: Save Trivy scan results to file
+      - name: save the scan result
         run: trivy image --severity HIGH,CRITICAL --format github --output trivy-report.git ghcr.io/digininja/dvwa:latest
 
-      - name: Upload Trivy scan results
+      - name: upload the scan result as artifact 
         uses: actions/upload-artifact@v4
         with:
           name: trivy_report

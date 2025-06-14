@@ -18,7 +18,7 @@ services:
       - db
     # Uncomment the next 2 lines to serve local source
     # volumes:
-    #   - ./:/var/www/html
+    #   - ./:/var/www/html1
     networks:
       - dvwa
     ports:
