@@ -224,10 +224,10 @@ jobs:
         run: trivy image --severity HIGH,CRITICAL ghcr.io/digininja/dvwa:latest
 
       - name: Save Trivy scan results to file
-        run: trivy image --severity HIGH,CRITICAL --format html --output trivy-report.html ghcr.io/digininja/dvwa:latest
+        run: trivy image --severity HIGH,CRITICAL --format github --output trivy-report.git ghcr.io/digininja/dvwa:latest
 
       - name: Upload Trivy scan results
         uses: actions/upload-artifact@v4
         with:
           name: trivy_report
-          path: trivy-report.html
+          path: trivy-report.git
