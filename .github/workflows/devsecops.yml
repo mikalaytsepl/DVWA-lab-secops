@@ -176,13 +176,17 @@ jobs:
 
       - name: Perform OWASP baseline scan
         run: |
-          docker run -v --rm $(pwd):/zap/wrk/:rw \
+          docker run --rm \
+            -v $(pwd):/zap/wrk/:rw \
             --network host \
             zaproxy/zap-stable zap-baseline.py \
             -t http://127.0.0.1:4280/login.php \
             -r zap-report.html || true
 
-      - name: upload scan results as artifacts
+      - name: List files to debug
+        run: ls -la
+
+      - name: Upload scan results as artifacts
         uses: actions/upload-artifact@v4
         with:
           name: owasp_report
