@@ -18,6 +18,17 @@ RUN apt-get update \
  apt-get update && apt-get install -y zlib1g zlib1g-dev \
  apt-get update && apt-get install -y libxml2
 
+# zaktualizuj najnowsze łatki z bookworm
+RUN apt-get update && apt-get upgrade -y && apt-get clean && rm -rf /var/lib/apt/lists/*
+
+# zaktualizuj curl (CVE-2024-0567)
+RUN apt-get install -y curl
+
+# zaktualizuj zależności PHP jeśli masz API z composera
+RUN cd /var/www/html/vulnerabilities/api && composer update --with-all-dependencies
+
+
+
 COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
 COPY --chown=www-data:www-data . .
 COPY --chown=www-data:www-data config/config.inc.php.dist config/config.inc.php
