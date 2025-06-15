@@ -23,3 +23,7 @@ COPY --chown=www-data:www-data config/config.inc.php.dist config/config.inc.php
 # This is configuring the stuff for the API
 RUN cd /var/www/html/vulnerabilities/api \
  && composer install \
+ 
+#aktualizacje podatnych modulow 
+RUN apt-get update && apt-get install -y libxml2\
+RUN apt-get update && apt-get install -y zlib1g zlib1g-dev
