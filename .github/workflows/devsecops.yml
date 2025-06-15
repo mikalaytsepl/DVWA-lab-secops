@@ -236,3 +236,25 @@ jobs:
         with:
           name: trivy_report
           path: trivy-report.html
+
+  push-docker:
+    name: Pushing the image to container registry
+    needs: [trivy-scan, build-and-test-dvwa]
+    runs-on: ubuntu-latest 
+
+    steps:
+      - name: download image artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: dvwa-image
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      
+      - name: Push Docker image
+        run: |
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/dvwa-custom:latest
+          
