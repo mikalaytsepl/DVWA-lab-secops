@@ -258,7 +258,9 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       
+      - name: do the retagging to eleminate naming problems
+        run: docker tag ghcr.io/digininja/dvwa:latest ${{ secrets.DOCKERHUB_USERNAME }}/dvwa-lab:latest
+      
       - name: Push Docker image
         run: |
-          docker push ${{ secrets.DOCKERHUB_USERNAME }}/dvwa-custom:latest
-          
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/dvwa-lab:latest
