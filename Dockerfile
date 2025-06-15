@@ -14,7 +14,9 @@ RUN apt-get update \
  && docker-php-ext-configure gd --with-jpeg --with-freetype \
  && a2enmod rewrite \
  # Use pdo_sqlite instead of pdo_mysql if you want to use sqlite
- && docker-php-ext-install gd mysqli pdo pdo_mysql
+ && docker-php-ext-install gd mysqli pdo pdo_mysql \
+ apt-get update && apt-get install -y zlib1g zlib1g-dev \
+ apt-get update && apt-get install -y libxml2
 
 COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
 COPY --chown=www-data:www-data . .
