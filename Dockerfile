@@ -1,4 +1,4 @@
-FROM docker.io/library/php:8-apache
+FROM php:8-apache-alpine
 
 LABEL org.opencontainers.image.source=https://github.com/digininja/DVWA
 LABEL org.opencontainers.image.description="DVWA pre-built image."
@@ -14,20 +14,7 @@ RUN apt-get update \
  && docker-php-ext-configure gd --with-jpeg --with-freetype \
  && a2enmod rewrite \
  # Use pdo_sqlite instead of pdo_mysql if you want to use sqlite
- && docker-php-ext-install gd mysqli pdo pdo_mysql \
- apt-get update && apt-get install -y zlib1g zlib1g-dev \
- apt-get update && apt-get install -y libxml2
-
-# zaktualizuj najnowsze łatki z bookworm
-RUN apt-get update && apt-get upgrade -y && apt-get clean && rm -rf /var/lib/apt/lists/*
-
-# zaktualizuj curl (CVE-2024-0567)
-RUN apt-get install -y curl
-
-# zaktualizuj zależności PHP jeśli masz API z composera
-RUN cd /var/www/html/vulnerabilities/api && composer update --with-all-dependencies
-
-
+ && docker-php-ext-install gd mysqli pdo pdo_mysql
 
 COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
 COPY --chown=www-data:www-data . .
