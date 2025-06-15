@@ -8,11 +8,13 @@ WORKDIR /var/www/html
 
 # Dodanie repozytorium sid tylko dla libxml2 i zlib1g
 RUN echo "deb http://deb.debian.org/debian sid main" > /etc/apt/sources.list.d/unstable.list \
- && echo -e "Package: libxml2\nPin: release a=sid\nPin-Priority: 500\n\nPackage: zlib1g\nPin: release a=sid\nPin-Priority: 500\n\nPackage: zlib1g-dev\nPin: release a=sid\nPin-Priority: 500" > /etc/apt/preferences.d/libxml2-zlib-pinning \
+ && echo -e "Package: libxml2\nPin: release a=sid\nPin-Priority: 500\nPackage: zlib1g\nPin: release a=sid\nPin-Priority: 500\nPackage: zlib1g-dev\nPin: release a=sid\nPin-Priority: 500" \
+    > /etc/apt/preferences.d/libxml2-zlib-pinning \
  && apt-get update \
  && apt-get upgrade -y \
  && apt-get install -y libxml2 zlib1g zlib1g-dev \
  && apt-get clean && rm -rf /var/lib/apt/lists/*
+
 
 # Instalacja zależności i rozszerzeń PHP
 RUN apt-get update \
