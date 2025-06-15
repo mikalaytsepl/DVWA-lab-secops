@@ -19,7 +19,7 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
 
-      - name: Set up Docker Buildx
+      - name: set up buildx
         uses: docker/setup-buildx-action@v3
 
       - name: start the app with docker compose (compose has biuld in it so no need builbing b4)
@@ -239,7 +239,7 @@ jobs:
 
   push-docker:
     name: Pushing the image to container registry
-    needs: [trivy-scan, build-and-test-dvwa]
+    needs: [trivy-scan, owasp-scan, build-and-test-dvwa]
     runs-on: ubuntu-latest 
 
     steps:
