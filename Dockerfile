@@ -1,4 +1,4 @@
-FROM php:8.2.20-apache
+FROM php:8.3.8-apache
 
 LABEL org.opencontainers.image.source=https://github.com/digininja/DVWA
 LABEL org.opencontainers.image.description="DVWA pre-built image."
